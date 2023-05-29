@@ -30,7 +30,6 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz)
             }
         }
     }
-    std::cout << "criada matriz \n";
 
 }
 
@@ -43,7 +42,6 @@ Sculptor::~Sculptor()
         delete v[i];
     }
     delete(v);
-    std::cout << "destrutor" << std::endl ;
 }
 
 void Sculptor::setColor(float _r, float _g, float _b, float _a)
@@ -177,7 +175,6 @@ void Sculptor::writeOFF(const char *filename)
     if (!arquivo.is_open()){
         std::cout << "Não foi possível criar o arquivo "<< filename << std::endl;
     }
-    std::cout << "Write OFF\n";
 
     arquivo << "OFF\n";
     int contador = 0;
@@ -191,7 +188,6 @@ void Sculptor::writeOFF(const char *filename)
             }
         }
     }
-    std::cout << contador << std::endl;
 
     for (int i = 0; i<nx; i++) {
         for (int j = 0; j<ny; j++) {
