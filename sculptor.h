@@ -9,11 +9,10 @@ struct Voxel {
 };
 
 class Sculptor {
-private:
+public:
     Voxel ***v; // 3D matrix
     int nx,ny,nz; // Dimensions
     float r,g,b,a; // Current drawing color
-public:
     Sculptor(int _nx, int _ny, int _nz);
     ~Sculptor();
     void setColor(float r, float g, float b, float a);
