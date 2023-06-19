@@ -1,0 +1,343 @@
+\doxysection{figurageometrica.\+h}
+\hypertarget{figurageometrica_8h_source}{}\label{figurageometrica_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FIGURAGEOMETRICA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FIGURAGEOMETRICA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Sculptor.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t);\ \ \textcolor{comment}{//\ Método\ virtual\ para\ desenhar\ a\ figura}}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_put_voxel}{PutVoxel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ z;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ r;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ g;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ b;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{float}\ a;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_put_voxel}{PutVoxel}}(\textcolor{keywordtype}{int}\ \_x,\ \textcolor{keywordtype}{int}\ \_y,\ \textcolor{keywordtype}{int}\ \_z,\ \textcolor{keywordtype}{float}\ \_r,\ \textcolor{keywordtype}{float}\ \_g,\ \textcolor{keywordtype}{float}\ \_b,\ \textcolor{keywordtype}{float}\ \_a)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ x\ =\ \_x;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ y\ =\ \_y;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ z\ =\ \_z;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ r\ =\ \_r;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ g\ =\ \_g;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ b\ =\ \_b;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ a\ =\ \_a;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ t.v[x][y][z].show\ =\ 1;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ t.v[x][y][z].r\ =\ r;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ t.v[x][y][z].g\ =\ g;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ t.v[x][y][z].b\ =\ b;}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cut_voxel}{CutVoxel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ z;}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_cut_voxel}{CutVoxel}}(\textcolor{keywordtype}{int}\ \_x,\ \textcolor{keywordtype}{int}\ \_y,\ \textcolor{keywordtype}{int}\ \_z)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ x\ =\ \_x;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ y\ =\ \_y;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ z\ =\ \_z;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ t.v[x][y][z].show\ =\ 0;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_put_box}{PutBox}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00063\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ x0;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ x1;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ y0;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ y1;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ z0;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ z1;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{float}\ r;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{float}\ g;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{float}\ b;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{float}\ a;}
+\DoxyCodeLine{00074\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_put_box}{PutBox}}(\textcolor{keywordtype}{int}\ \_x0,\ \textcolor{keywordtype}{int}\ \_x1,\ \textcolor{keywordtype}{int}\ \_y0,\ \textcolor{keywordtype}{int}\ \_y1,\ \textcolor{keywordtype}{int}\ \_z0,\ \textcolor{keywordtype}{int}\ \_z1,\ \textcolor{keywordtype}{float}\ \_r,\ \textcolor{keywordtype}{float}\ \_g,\ \textcolor{keywordtype}{float}\ \_b,\ \textcolor{keywordtype}{float}\ \_a)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ cout\ <<\ x0\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ x1\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ y0\ <<\ \textcolor{stringliteral}{"{}\ \(\backslash\)n"{}};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ x0\ =\ \_x0;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ x1\ =\ \_x1;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ y0\ =\ \_y0;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ y1\ =\ \_y1;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ z0\ =\ \_z0;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ z1\ =\ \_z1;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ r\ =\ \_r;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ g\ =\ \_g;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ b\ =\ \_b;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ a\ =\ \_a;}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ vector<PutVoxel*>\ voxels;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ x0;\ i<x1;\ i++)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ y0;\ j<y1;\ j++)\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ z0;\ k<z1;\ k++)\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voxels.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_put_voxel}{PutVoxel}}(i,j,k,r,g,b,a));}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_put_voxel}{PutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ voxel-\/>draw(t);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_put_voxel}{PutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ voxel;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cut_box}{CutBox}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00109\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{int}\ x0;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ x1;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{int}\ y0;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{int}\ y1;}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ z0;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{int}\ z1;}
+\DoxyCodeLine{00116\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{class_cut_box}{CutBox}}(\textcolor{keywordtype}{int}\ \_x0,\ \textcolor{keywordtype}{int}\ \_x1,\ \textcolor{keywordtype}{int}\ \_y0,\ \textcolor{keywordtype}{int}\ \_y1,\ \textcolor{keywordtype}{int}\ \_z0,\ \textcolor{keywordtype}{int}\ \_z1)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ x0\ =\ \_x0;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ x1\ =\ \_x1;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ y0\ =\ \_y0;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ y1\ =\ \_y1;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ z0\ =\ \_z0;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ z1\ =\ \_z1;}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ vector<CutVoxel*>\ voxels;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ x0;\ i<x1;\ i++)\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ y0;\ j<y1;\ j++)\{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ z0;\ k<z1;\ k++)\{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voxels.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_cut_voxel}{CutVoxel}}(i,j,k));}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_cut_voxel}{CutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ voxel-\/>draw(t);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_cut_voxel}{CutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ voxel;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{int}\ distanciaPontos(\textcolor{keywordtype}{int}\ x0,\textcolor{keywordtype}{int}\ x1,\textcolor{keywordtype}{int}\ y0,\textcolor{keywordtype}{int}\ y1,\textcolor{keywordtype}{int}\ z0,\textcolor{keywordtype}{int}\ z1)\{}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ distancia\ =\ std::sqrt(}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ (x1\ -\/\ x0)\ *\ (x1\ -\/\ x0)\ +}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ (y1\ -\/\ y0)\ *\ (y1\ -\/\ y0)\ +}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ (z1\ -\/\ z0)\ *\ (z1\ -\/\ z0)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ distancia;}
+\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_put_sphere}{PutSphere}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00155\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ xcenter;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ ycenter;}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ zcenter;}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{int}\ radius;}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{float}\ r;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{float}\ g;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{float}\ b;}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{float}\ a;}
+\DoxyCodeLine{00164\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_put_sphere}{PutSphere}}(\textcolor{keywordtype}{int}\ \_xcenter,\ \textcolor{keywordtype}{int}\ \_ycenter,\ \textcolor{keywordtype}{int}\ \_zcenter,\ \textcolor{keywordtype}{int}\ \_radius,\ \textcolor{keywordtype}{float}\ \_r,\ \textcolor{keywordtype}{float}\ \_g,\ \textcolor{keywordtype}{float}\ \_b,\ \textcolor{keywordtype}{float}\ \_a)\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ xcenter\ =\ \_xcenter;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ ycenter\ =\ \_ycenter;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ zcenter\ =\ \_zcenter;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ radius\ =\ \_radius;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ r\ =\ \_r;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ g\ =\ \_g;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ b\ =\ \_b;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ a\ =\ \_a;}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ vector<PutVoxel*>\ voxels;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<t.nx;\ i++)\{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<t.ny;\ j++)\{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k<t.nz;\ k++)\{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ distancia\_raio\ =\ distanciaPontos(xcenter,i,ycenter,j,zcenter,k);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ distancia\_raio\ <=\ radius)\{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voxels.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_put_voxel}{PutVoxel}}(i,j,k,r,g,b,a));}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_put_voxel}{PutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ voxel-\/>draw(t);}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_put_voxel}{PutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ voxel;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cut_sphere}{CutSphere}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00201\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{int}\ xcenter;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{int}\ ycenter;}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{int}\ zcenter;}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{int}\ radius;}
+\DoxyCodeLine{00206\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_cut_sphere}{CutSphere}}(\textcolor{keywordtype}{int}\ \_xcenter,\ \textcolor{keywordtype}{int}\ \_ycenter,\ \textcolor{keywordtype}{int}\ \_zcenter,\ \textcolor{keywordtype}{int}\ \_radius)\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ xcenter\ =\ \_xcenter;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ ycenter\ =\ \_ycenter;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ zcenter\ =\ \_zcenter;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ radius\ =\ \_radius;}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ vector<CutVoxel*>\ voxels;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<t.nx;\ i++)\{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j<t.ny;\ j++)\{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k<t.nz;\ k++)\{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ distancia\_raio\ =\ distanciaPontos(xcenter,i,ycenter,j,zcenter,k);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ distancia\_raio\ <=\ radius)\{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voxels.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_cut_voxel}{CutVoxel}}(i,j,k));}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_cut_voxel}{CutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ voxel-\/>draw(t);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_cut_voxel}{CutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ voxel;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ \};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_put_ellipsoid}{PutEllipsoid}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00238\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{int}\ xcenter;}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{int}\ ycenter;}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{int}\ zcenter;}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{int}\ rx;}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{int}\ ry;}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{int}\ rz;}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{float}\ r;}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{float}\ g;}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{float}\ b;}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{float}\ a;}
+\DoxyCodeLine{00249\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{class_put_ellipsoid}{PutEllipsoid}}(\textcolor{keywordtype}{int}\ \_xcenter,\ \textcolor{keywordtype}{int}\ \_ycenter,\ \textcolor{keywordtype}{int}\ \_zcenter,\ \textcolor{keywordtype}{int}\ \_rx,\ \textcolor{keywordtype}{int}\ \_ry,\ \textcolor{keywordtype}{int}\ \_rz,\ \textcolor{keywordtype}{int}\ \_r,\ \textcolor{keywordtype}{int}\ \_g,\ \textcolor{keywordtype}{int}\ \_b,\ \textcolor{keywordtype}{int}\ \_a)\ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ xcenter\ =\ \_xcenter;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ ycenter\ =\ \_ycenter;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ zcenter\ =\ \_zcenter;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ rx\ =\ \_rx;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ ry\ =\ \_ry;}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ rz\ =\ \_rz;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ r\ =\ \_r;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ g\ =\ \_g;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ b\ =\ \_b;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ a\ =\ \_a;}
+\DoxyCodeLine{00261\ \ \ \ \ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \ \{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ vector<PutVoxel*>\ voxels;}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=\ xcenter-\/rx;\ i\ <=\ rx+xcenter;\ i++)\{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=\ ycenter-\/\ ry;\ j\ <=ry+ycenter;\ j++)\{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ zcenter\ -\/\ rz;\ k\ <=\ rz+zcenter;\ k++)\{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaX\ =\ pow((i\ -\/\ xcenter)/rx,2)\ ;}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaY\ =\ pow((j\ -\/\ ycenter)/ry,2)\ ;}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaZ\ =\ pow((k\ -\/\ zcenter)/rz,2)\ ;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distancia\ =\ distanciaX\ +\ distanciaY\ +\ distanciaZ;}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ distância\ está\ dentro\ da\ elipsoide}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distancia\ <\ 1)\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voxels.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_put_voxel}{PutVoxel}}(i,j,k,r,g,b,a));}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_put_voxel}{PutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ voxel-\/>draw(t);}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_put_voxel}{PutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ voxel;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \};}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00289\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cut_ellipsoid}{CutEllipsoid}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figura_geometrica}{FiguraGeometrica}}\ \{}
+\DoxyCodeLine{00290\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{int}\ xcenter;}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordtype}{int}\ ycenter;}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{int}\ zcenter;}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{int}\ rx;}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{int}\ ry;}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{int}\ rz;}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordtype}{float}\ r;}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{float}\ g;}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{float}\ b;}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{float}\ a;}
+\DoxyCodeLine{00301\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00302\ \ \ \ \ \mbox{\hyperlink{class_cut_ellipsoid}{CutEllipsoid}}(\textcolor{keywordtype}{int}\ \_xcenter,\ \textcolor{keywordtype}{int}\ \_ycenter,\ \textcolor{keywordtype}{int}\ \_zcenter,\ \textcolor{keywordtype}{int}\ \_rx,\ \textcolor{keywordtype}{int}\ \_ry,\ \textcolor{keywordtype}{int}\ \_rz)\ \{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ xcenter\ =\ \_xcenter;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ ycenter\ =\ \_ycenter;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ zcenter\ =\ \_zcenter;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ rx\ =\ \_rx;}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ ry\ =\ \_ry;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ rz\ =\ \_rz;}
+\DoxyCodeLine{00309\ \ \ \ \ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\mbox{\hyperlink{class_sculptor}{Sculptor}}\ \&t)\ \ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ vector<CutVoxel*>\ voxels;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=\ xcenter-\/rx;\ i\ <=\ rx+xcenter;\ i++)\{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j=\ ycenter-\/\ ry;\ j\ <=ry+ycenter;\ j++)\{}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ zcenter\ -\/\ rz;\ k\ <=\ rz+zcenter;\ k++)\{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaX\ =\ pow((i\ -\/\ xcenter)/rx,2)\ ;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaY\ =\ pow((j\ -\/\ ycenter)/ry,2)\ ;}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distanciaZ\ =\ pow((k\ -\/\ zcenter)/rz,2)\ ;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ distancia\ =\ distanciaX\ +\ distanciaY\ +\ distanciaZ;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ a\ distância\ está\ dentro\ da\ elipsoide}}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distancia\ <\ 1)\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voxels.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_cut_voxel}{CutVoxel}}(i,j,k));}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_cut_voxel}{CutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ voxel-\/>draw(t);}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_cut_voxel}{CutVoxel}}*\ voxel\ :\ voxels)\ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ voxel;}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \}}
+\DoxyCodeLine{00335\ \};}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FIGURAGEOMETRICA\_H}}
+
+\end{DoxyCode}
